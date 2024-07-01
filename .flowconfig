@@ -3,6 +3,9 @@
 <PROJECT_ROOT>/packages/react-native/template/.*
 <PROJECT_ROOT>/packages/react-native/sdks/.*
 
+; Ignore the codegen e2e tests
+<PROJECT_ROOT>/packages/react-native-codegen/e2e/__test_fixtures__/modules/NativeEnumTurboModule.js
+
 ; Ignore the Dangerfile
 <PROJECT_ROOT>/packages/react-native-bots/dangerfile.js
 
@@ -61,6 +64,8 @@ module.name_mapper='^react-native/\(.*\)$' -> '<PROJECT_ROOT>/packages/react-nat
 module.name_mapper='^@react-native/dev-middleware$' -> '<PROJECT_ROOT>/packages/dev-middleware'
 module.name_mapper='^@?[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> '<PROJECT_ROOT>/packages/react-native/Libraries/Image/RelativeImageStub'
 
+one_sided_type_guards=true
+
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
 suppress_type=$FlowFixMeProps
@@ -88,4 +93,4 @@ untyped-import
 untyped-type-import
 
 [version]
-^0.237.2
+^0.238.3
