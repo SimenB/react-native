@@ -8,9 +8,14 @@
  * @format
  */
 
+import type {
+  FantomRenderedOutput,
+  RenderOutputConfig,
+} from './getFantomRenderedOutput';
 import type {MixedElement} from 'react';
 
-import ReactFabric from '../../../Libraries/Renderer/shims/ReactFabric';
+import getFantomRenderedOutput from './getFantomRenderedOutput';
+import ReactFabric from 'react-native/Libraries/Renderer/shims/ReactFabric';
 
 let globalSurfaceIdCounter = 1;
 
@@ -48,6 +53,10 @@ class Root {
     global.$$JSTesterModuleName$$.flushMessageQueue();
   }
 
+  getRenderedOutput(config: RenderOutputConfig = {}): FantomRenderedOutput {
+    return getFantomRenderedOutput(this.#surfaceId, config);
+  }
+
   // TODO: add an API to check if all surfaces were deallocated when tests are finished.
 }
 
@@ -56,7 +65,7 @@ class Root {
  *
  * React must run inside of event loop to ensure scheduling environment is closer to production.
  */
-export function runTask(task: () => void) {
+export function runTask(task: () => void | Promise<void>) {
   nativeRuntimeScheduler.unstable_scheduleCallback(
     schedulerPriorityImmediate,
     task,
