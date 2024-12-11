@@ -1,4 +1,29 @@
 # Changelog
+## v0.77.0-rc.2
+
+### Changed
+
+- Reverts #47503. (~~Callbacks passed to `animation.start(<callback>)` will be scheduled for execution in a microtask. Previously, there were certain scenarios in which the callback could be synchronously executed by `start`.~~) ([8793b7d89b](https://github.com/facebook/react-native/commit/8793b7d89bcafdfcca7ecb953e60882b67ffc807) by [@yungsters](https://github.com/yungsters))
+
+### Fixed
+
+#### Android specific
+
+- Fix crash on HeadlessJsTaskService on old architecture ([4560fc0497](https://github.com/facebook/react-native/commit/4560fc049748a345d5945bc08d43f4b61ca51ff3) by [@cortinico](https://github.com/cortinico))
+- Re-introduce the deprecated constructor on ReactModuleInfo ([734730df75](https://github.com/facebook/react-native/commit/734730df75b3bdddeb5dbe65f4151cc92b988303) by [@cortinico](https://github.com/cortinico))
+
+## v0.77.0-rc.1
+
+### Fixed
+
+- Replace Object.hasOwn usages to fix Animated on JSC ([e996b3f346](https://github.com/facebook/react-native/commit/e996b3f346462a394012a722ce19990cdf9c3d9a) by [@robhogan](https://github.com/robhogan))
+- Remove non compliant `filename*` attribute in a FormData `content-disposition` header ([f791fb9e66](https://github.com/facebook/react-native/commit/f791fb9e660fe15bccf55029045c48f4bbcbc5cb) by [@foyarash](https://github.com/foyarash))
+- Fix "punycode is deprecated" warning by replacing `node-fetch` with native `fetch` ([881d8a720f](https://github.com/facebook/react-native/commit/881d8a720fb24241d7b2127273ca6116833bf176) by [@jbroma](https://github.com/jbroma))
+
+#### Android specific
+
+- Reverted removal of TurboReactPackage ([70a957452c](https://github.com/facebook/react-native/commit/70a957452c438a74787f4f752b2c274360cb2edd) by [@javache](https://github.com/javache))
+- Fix IOException in `BuildCodegenCLITask` ([9147b0753a](https://github.com/facebook/react-native/commit/9147b0753a6c3afb2480b079f91614cd7189a28a) by [@vonovak](https://github.com/vonovak))
 
 ## v0.77.0-rc.0
 
@@ -381,6 +406,27 @@
 - Fixed warnings when validating SVC ([de39a204c3](https://github.com/facebook/react-native/commit/de39a204c3588a3c02dc2e72464174c75b3a6749) by [@cipolleschi](https://github.com/cipolleschi))
 - Solved SVC warnings for RNTester ([fad4a0783b](https://github.com/facebook/react-native/commit/fad4a0783b0a0478c147d9bde2ef9ab082a08297) by [@cipolleschi](https://github.com/cipolleschi))
 - Don't reference PrivacyInfo.xcprivacy twice for new projects ([cadd41b1a2](https://github.com/facebook/react-native/commit/cadd41b1a2e16b1c77a8d3022f4ccbdbd5ea295f) by [@okwasniewski](https://github.com/okwasniewski))
+
+## v0.76.5
+
+### Fixed
+
+- Better support filtering out non linked platforms ([fcbcf80d1c](https://github.com/facebook/react-native/commit/fcbcf80d1c080af42b5277fc8a153059194efb95) by [@cipolleschi](https://github.com/cipolleschi))
+
+#### Android specific
+
+- Fix crash on HeadlessJsTaskService on old architecture ([4560fc0497](https://github.com/facebook/react-native/commit/4560fc049748a345d5945bc08d43f4b61ca51ff3) by [@cortinico](https://github.com/cortinico))
+
+## v0.76.4
+
+### Added
+
+- Sync debugger-frontend to latest 0.76-stable (fix Expo node_modules entry points in Sources panel) ([43fe69c315](https://github.com/facebook/react-native/commit/43fe69c315e68aab96c303c7a6c9b3821a6e25e5) by [@huntie](https://github.com/huntie))
+- Exclude unlinked libs from codegen ([3cedb09a65](https://github.com/facebook/react-native/commit/3cedb09a650adda0b3f24e931c25f27730af19b1) by [@cipolleschi](https://github.com/cipolleschi))
+
+#### Android specific
+
+- Avoid NPE when touch event is triggered before SurfaceManager is initiated ([b8095f4692](https://github.com/facebook/react-native/commit/b8095f4692610c7f4631b851dc7d8dc9b149a277) by [@CHOIMINSEOK](https://github.com/CHOIMINSEOK))
 
 ## v0.76.3
 
