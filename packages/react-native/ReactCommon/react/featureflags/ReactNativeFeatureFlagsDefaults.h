@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<ee899be30798eb6d386b44bc6bc027ea>>
+ * @generated SignedSource<<14f964cf6d43943bdeed783d28c231e0>>
  */
 
 /**
@@ -43,6 +43,10 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
+  bool enableAccumulatedUpdatesInRawPropsAndroid() override {
+    return false;
+  }
+
   bool enableAlignItemsBaselineOnFabricIOS() override {
     return true;
   }
@@ -76,10 +80,6 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
   }
 
   bool enableFabricRenderer() override {
-    return false;
-  }
-
-  bool enableFabricRendererExclusively() override {
     return false;
   }
 
@@ -203,8 +203,12 @@ class ReactNativeFeatureFlagsDefaults : public ReactNativeFeatureFlagsProvider {
     return false;
   }
 
-  bool useRuntimeShadowNodeReferenceUpdate() override {
+  bool useRawPropsJsiValue() override {
     return false;
+  }
+
+  bool useRuntimeShadowNodeReferenceUpdate() override {
+    return true;
   }
 
   bool useTurboModuleInterop() override {
