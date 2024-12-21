@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @generated SignedSource<<9541abe6da92d991557ca6d2f1e36a9a>>
+ * @generated SignedSource<<864803698ff070ce22a4b2f121acbbc0>>
  */
 
 /**
@@ -45,6 +45,8 @@ class NativeReactNativeFeatureFlags
 
   bool disableMountItemReorderingAndroid(jsi::Runtime& runtime);
 
+  bool enableAccumulatedUpdatesInRawPropsAndroid(jsi::Runtime& runtime);
+
   bool enableAlignItemsBaselineOnFabricIOS(jsi::Runtime& runtime);
 
   bool enableAndroidLineHeightCentering(jsi::Runtime& runtime);
@@ -62,8 +64,6 @@ class NativeReactNativeFeatureFlags
   bool enableFabricLogs(jsi::Runtime& runtime);
 
   bool enableFabricRenderer(jsi::Runtime& runtime);
-
-  bool enableFabricRendererExclusively(jsi::Runtime& runtime);
 
   bool enableFixForViewCommandRace(jsi::Runtime& runtime);
 
@@ -124,6 +124,8 @@ class NativeReactNativeFeatureFlags
   bool useOptimisedViewPreallocationOnAndroid(jsi::Runtime& runtime);
 
   bool useOptimizedEventBatchingOnAndroid(jsi::Runtime& runtime);
+
+  bool useRawPropsJsiValue(jsi::Runtime& runtime);
 
   bool useRuntimeShadowNodeReferenceUpdate(jsi::Runtime& runtime);
 
