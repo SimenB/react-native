@@ -69,8 +69,7 @@ void AnimationDriver::runAnimationStep(double renderingTime) {
     return;
   }
 
-  // ticks are 100 nanoseconds, divide by 10000 to get milliseconds.
-  const auto frameTimeMs = renderingTime / TicksPerMs;
+  const auto frameTimeMs = renderingTime;
   auto restarting = false;
   if (startFrameTimeMs_ < 0) {
     startFrameTimeMs_ = frameTimeMs;
